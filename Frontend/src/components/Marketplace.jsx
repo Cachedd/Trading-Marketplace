@@ -53,7 +53,7 @@ const Marketplace = () => {
         />
       </form>
       <div className="w-fit">
-        <ul className="flex flex-col gap-3 pb-5 md:flex-row justify-center items-center">
+        <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3 pb-5 md:flex-row justify-center items-center">
           <li
             onClick={sortAZ}
             className="w-[200px] text-sm mx-5 p-2 bg-[#223052] cursor-pointer text-white rounded-lg text-center"
