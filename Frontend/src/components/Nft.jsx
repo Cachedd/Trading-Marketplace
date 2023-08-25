@@ -9,12 +9,12 @@ export const Nft = (props) => {
   return (
     <div
       onClick={() => addToCart(id)}
-      className="flex flex-col justify-between items-center h-[360px] w-[300px] rounded-xl text-white bg-[#3A71FD] overflow-hidden shadow-lg hover:bg-[#223052] hover:scale-105 cursor-pointer duration-200"
+      className="flex flex-col justify-between items-center h-[310px] w-[250px] rounded-xl text-white bg-[#3A71FD] overflow-hidden shadow-lg hover:bg-[#223052] hover:scale-105 cursor-pointer duration-200"
     >
       <img src={image} alt="" />
       <div className="w-full h-full flex justify-between items-center">
-        <p className="text-center font-semibold w-[33%]">{title}</p>
-        <p className="text-center font-semibold w-[33%]">{price} ETH</p>
+        <p className="text-center text-sm font-semibold w-[33%]">{title}</p>
+        <p className="text-center text-sm font-semibold w-[33%]">{price} ETH</p>
 
         <div className="w-[33%] flex justify-center items-center">
           {cartItemsAmount > 0 ? null : <AiOutlinePlus className="text-2xl" />}

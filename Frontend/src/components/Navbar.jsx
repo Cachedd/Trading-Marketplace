@@ -18,12 +18,12 @@ const Navbar = () => {
         NFTplace.
       </h1>
       <ul className="hidden lg:flex justify-stretch w-[33%]">
-        <li className="p-4 rounded-md text-[1.1rem] sm:mr-[25px] font-semibold cursor-pointer text-blue-950 duration-150 hover:text-[#3A71FD]">
+        <li className="p-4 rounded-md text-md sm:mr-[25px] font-semibold cursor-pointer text-blue-950 duration-150 hover:text-[#3A71FD]">
           <Link to="home" spy={true} smooth={true} offset={50} duration={500}>
             Home
           </Link>
         </li>
-        <li className="p-4 rounded-md text-[1.1rem] sm:mr-[25px] font-semibold cursor-pointer text-blue-950 duration-150 hover:text-[#3A71FD]">
+        <li className="p-4 rounded-md text-md sm:mr-[25px] font-semibold cursor-pointer text-blue-950 duration-150 hover:text-[#3A71FD]">
           <Link
             to="marketplace"
             spy={true}
@@ -34,12 +34,12 @@ const Navbar = () => {
             NFTs
           </Link>
         </li>
-        <li className="p-4 rounded-md text-[1.1rem] sm:mr-[25px] font-semibold cursor-pointer text-blue-950 duration-150 hover:text-[#3A71FD]">
+        <li className="p-4 rounded-md text-md sm:mr-[25px] font-semibold cursor-pointer text-blue-950 duration-150 hover:text-[#3A71FD]">
           <Link to="about" spy={true} smooth={true} offset={50} duration={500}>
             About
           </Link>
         </li>
-        <li className="p-4 rounded-md text-[1.1rem] sm:mr-[25px] font-semibold cursor-pointer text-blue-950 duration-150 hover:text-[#3A71FD]">
+        <li className="p-4 rounded-md text-md sm:mr-[25px] font-semibold cursor-pointer text-blue-950 duration-150 hover:text-[#3A71FD]">
           <Link
             to="contact"
             spy={true}
@@ -89,7 +89,7 @@ const Navbar = () => {
               offset={50}
               duration={500}
             >
-              Browse
+              NFTs
             </Link>
           </li>
           <li className="p-4 border-b-2 border-[#3A71FD] md:text-[1.1rem] text-blue-900 font-semibold">

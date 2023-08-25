@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NFTS } from "../products";
 import Nft from "./Nft";
+import { PiMagnifyingGlassBold } from "react-icons/pi";
 
 const Marketplace = () => {
   const [sortedNFTs, setSortedNFTs] = useState(NFTS);
@@ -42,45 +43,47 @@ const Marketplace = () => {
       <h1 className="text-3xl uppercase font-semibold pt-5">Browse NFTs</h1>
       <form
         action="get"
-        className="w-full h-fit flex justify-center items-center"
+        className="w-fit h-fit flex justify-center items-center relative"
       >
+        <PiMagnifyingGlassBold className="text-md text-[#a5a5a5] absolute left-0 ml-4" />
         <input
           type="text"
           placeholder="Search"
-          className="w-[250px] lg:w-[350px] bg-[#f2f2f2] rounded-lg shadow-lg font-semibold text-center p-2"
+          className="w-[280px] lg:w-[460px] bg-[#f2f2f2] text-sm rounded-lg shadow-lg font-semibold text-center p-3"
           value={searchTerm}
           onChange={handleSearchChange}
+          maxLength={20}
         />
       </form>
       <div className="w-fit">
         <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3 pb-5 md:flex-row justify-center items-center">
           <li
             onClick={sortAZ}
-            className="w-[200px] text-sm mx-5 p-2 bg-[#223052] cursor-pointer text-white rounded-lg text-center"
+            className="w-[200px] text-sm mx-5 p-3 bg-[#ebebeb] font-semibold cursor-pointer text-[#3A71FD] rounded-lg text-center"
           >
             Sort A-Z
           </li>
           <li
             onClick={sortZA}
-            className="w-[200px] text-sm mx-5 p-2 bg-[#223052] cursor-pointer text-white rounded-lg text-center"
+            className="w-[200px] text-sm mx-5 p-3 bg-[#ebebeb] font-semibold text-[#3A71FD] cursor-pointer rounded-lg text-center"
           >
             Sort Z-A
           </li>
           <li
             onClick={sortPriceCheap}
-            className="w-[200px] text-sm mx-5 p-2 bg-[#223052] cursor-pointer text-white rounded-lg text-center"
+            className="w-[200px] text-sm mx-5 p-3 bg-[#ebebeb] font-semibold cursor-pointer text-[#3A71FD] rounded-lg text-center"
           >
             Sort Price (Low to High)
           </li>
           <li
             onClick={sortPriceExpensive}
-            className="w-[200px] text-sm mx-5 p-2 bg-[#223052] cursor-pointer text-white rounded-lg text-center"
+            className="w-[200px] text-sm mx-5 p-3 bg-[#ebebeb] font-semibold cursor-pointer text-[#3A71FD] rounded-lg text-center"
           >
             Sort Price (High to Low)
           </li>
         </ul>
       </div>
-      <div className="products grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 justify-center items-center gap-12">
+      <div className="products grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 justify-center items-center gap-10">
         {sortedNFTs
           .filter((product) =>
             product.title.toLowerCase().includes(searchTerm.toLowerCase())

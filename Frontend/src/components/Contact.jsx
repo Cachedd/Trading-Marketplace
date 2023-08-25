@@ -1,56 +1,65 @@
-import React from "react";
+import React, { useRef } from "react";
 
 const Contact = () => {
+  const formRef = useRef(null);
+
+  const handleSendClick = () => {
+    if (formRef.current) {
+      formRef.current.submit();
+    }
+  };
+
   return (
     <div
       id="contact"
-      className="h-screen w-full flex justify-center items-center lg:py-[300px]"
+      className="h-screen w-full flex flex-col justify-center items-center "
     >
-      <form
-        action="post"
-        className="h-[550px] w-[320px] lg:w-[550px] bg-slate-50 rounded-2xl flex flex-col justify-center items-center md:justify-center shadow-xl"
-      >
-        <h2 className="sm:text-[16px] text-center font-bold text-[#3A71FD] px-8 py-1 w-40">
-          NFTplace.
-        </h2>
-        <h1 className="text-center text-lg font-bold py-2 uppercase">
-          Contact Us
+      <div className="w-full bg-white rounded-2xl shadow-xl flex justify-center items-center flex-col h-[90%] pb-8">
+        <h1 className="text-3xl uppercase font-semibold py-5 md:my-10 w-fit md:w-[33%] text-center">
+          CONTACT US
         </h1>
-        <div className="flex flex-col justify-center items-center gap-4 lg:gap-5 w-full">
-          <input
-            type="text"
-            name="firstname"
-            id="firstname"
-            placeholder="First Name"
-            className="w-[80%] h-8 bg-gray-200 rounded-md text-center text-1xl p-5"
-          />
-          <input
-            type="text"
-            name="lastname"
-            id="lastname"
-            placeholder="Last Name"
-            className="w-[80%] h-8 bg-gray-200 rounded-md text-center text-1xl p-5"
-          />
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Email Address"
-            className="w-[80%] h-8 bg-gray-200 rounded-md text-center text-1xl p-5"
-          />
-          <textarea
-            name="message"
-            id="message"
-            cols="30"
-            rows="10"
-            placeholder="Message"
-            className="w-[80%] h-[150px] bg-gray-200 rounded-md text-center text-1xl p-4"
-          ></textarea>
-          <button className="p-4 bg-[#3A71FD] rounded-md text-white font-semibold w-[120px] md:w-[200px] hover:bg-slate-600 duration-150">
-            SEND
-          </button>
+        <div className="flex  bg-gray-200 w-[84%] flex-col h-[70%] rounded-t-xl justify-between items-center ">
+          <form
+            ref={formRef}
+            action="mailto:103389809@student.swin.edu.au"
+            className="flex flex-col h-full w-[84%] rounded-t-xl justify-evenly items-center"
+          >
+            <div className="flex justify-center gap-5 lg:gap-8 items-center flex-col lg:flex-row mt-5 w-[90%] md:w-[75%]">
+              <input
+                type="text"
+                required
+                placeholder="First Name"
+                className="w-full lg:w-[50%] p-3 mt-2 text-md lg:text-sm border-b-4 bg-[#FFFFFF] rounded-xl text-center font-semibold text-[#3A71FD] uppercase"
+              />
+              <input
+                type="text"
+                required
+                placeholder="Last Name"
+                className="w-full lg:w-[60%] p-3 mt-2 text-md lg:text-sm border-b-4 bg-[#FFFFFF] rounded-xl text-center font-semibold text-[#3A71FD]  uppercase"
+              />
+            </div>
+            <input
+              type="email"
+              required
+              placeholder="EMAIL ADDRESS"
+              className="w-[90%] lg:w-[75%] p-3 mt-2 text-md lg:text-sm border-b-4 bg-[#FFFFFF] rounded-xl text-center font-semibold text-[#3A71FD]"
+            />
+            <textarea
+              placeholder="WRITE MESSAGE HERE"
+              required
+              rows="4"
+              cols="50"
+              className="w-[90%] h-[30%] lg:w-[75%] p-3 bg-[#FFFFFF] rounded-md lg:text-sm text-[#3A71FD] font-semibold"
+            ></textarea>
+          </form>
         </div>
-      </form>
+        <button
+          onClick={handleSendClick}
+          className="h-20 bg-[#3A71FD] w-[84%] text-white font-semibold text-md rounded-b-xl hover:bg-[#2b335f] duration-200"
+        >
+          SEND
+        </button>
+      </div>
     </div>
   );
 };

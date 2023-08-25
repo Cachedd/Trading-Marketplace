@@ -7,8 +7,8 @@ import "../index.css";
 const Hero = () => {
   return (
     <div className="">
-      <div className="w-full min-h-[93vh] text-center justify-center items-center md:flex-col lg:flex lg:flex-row overflow-x-hidden ">
-        <div className="relative flex justify-center items-center py-[5%]">
+      <div className="w-full min-h-[93vh] text-center justify-center items-center md:flex-col lg:flex lg:flex-row overflow-x-hidden">
+        <div className="relative flex justify-center mb-16 items-center py-[5%]">
           <img
             src={Blockchain}
             alt="logo"
@@ -16,11 +16,11 @@ const Hero = () => {
           />
         </div>
 
-        <div className="px-[3%]">
-          <p className="text-[#3A71FD] text-[1.18em] font-bold p-2 uppercase hidden md:block">
+        <div className="px-[3%] mb-16">
+          <p className="text-[#3A71FD] text-md font-bold p-2 uppercase hidden md:block">
             Join the emerging Web3 revolution
           </p>
-          <h1 className="md:text-5xl sm:text-6xl text-4xl font-bold md:py-6 text-black">
+          <h1 className="md:text-4xl text-3xl font-bold md:py-6 text-black">
             Buy and trade NFTs.
           </h1>
           <div className="flex justify-center items-center">
@@ -35,11 +35,11 @@ const Hero = () => {
               loop
             />
           </div>
-          <p className="hidden text-xl font-bold text-gray-500 py-[10px] md:hidden lg:block">
-            Emerging NFT marketplace NFTplace.
+          <p className="hidden text-lg font-bold text-gray-500 py-[10px] md:hidden lg:block">
+            The emerging NFT marketplace.
           </p>
           <div className="flex flex-col justify-center items-center lg:flex-row">
-            <button className="bg-[#3A71FD] text-white w-[250px] text-2xl lg:w-[220px] rounded-md font-medium my-6 mx-[2%] py-4 sm:py-6 hover:bg-slate-600 duration-150">
+            <button className="bg-[#3A71FD] text-white w-[180px] text-lg lg:w-[180px] rounded-md font-medium my-6 mx-[2%] py-4 hover:bg-slate-600 duration-150">
               <Link
                 to="marketplace"
                 spy={true}
@@ -50,7 +50,7 @@ const Hero = () => {
                 Browse NFTs
               </Link>
             </button>
-            <button className="bg-[#E6E6E6] w-[250px] text-2xl lg:w-[220px] rounded-md font-medium my-0 mx-[2%] py-4 sm:py-6 text-[#101336] hover:bg-slate-600 duration-150 hover:text-white">
+            <button className="bg-[#E6E6E6] w-[180px] text-lg lg:w-[180px] rounded-md font-medium my-0 mx-[2%] py-4 sm:py-4 text-[#101336] hover:bg-slate-600 duration-150 hover:text-white">
               <Link
                 to="about"
                 spy={true}
