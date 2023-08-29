@@ -1,11 +1,20 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
+import { CircularProgress } from "@material-ui/core";
 
 const Contact = () => {
   const formRef = useRef(null);
+  const [sendBtn, setSendBtn] = useState("SEND");
 
   const handleSendClick = () => {
     if (formRef.current) {
-      formRef.current.submit();
+      // formRef.current.submit();
+      setSendBtn(<CircularProgress className="fade-in" color="inherit" />);
+      setTimeout(() => {
+        setSendBtn(<CircularProgress className="fade-out" color="inherit" />);
+        setTimeout(() => {
+          setSendBtn("MESSAGE SENT");
+        }, 1000); //
+      }, 1000); //
     }
   };
 
@@ -29,27 +38,27 @@ const Contact = () => {
                 type="text"
                 required
                 placeholder="First Name"
-                className="w-full lg:w-[50%] p-3 mt-2 text-md lg:text-sm border-b-4 bg-[#FFFFFF] rounded-xl text-center font-semibold text-[#3A71FD] uppercase"
+                className="w-full lg:w-[50%] p-3 mt-2 text-sm border-b-4 bg-[#FFFFFF] rounded-xl text-center font-semibold text-[#3A71FD]"
               />
               <input
                 type="text"
                 required
                 placeholder="Last Name"
-                className="w-full lg:w-[60%] p-3 mt-2 text-md lg:text-sm border-b-4 bg-[#FFFFFF] rounded-xl text-center font-semibold text-[#3A71FD]  uppercase"
+                className="w-full lg:w-[60%] p-3 mt-2 text-sm border-b-4 bg-[#FFFFFF] rounded-xl text-center font-semibold text-[#3A71FD]"
               />
             </div>
             <input
               type="email"
               required
-              placeholder="EMAIL ADDRESS"
-              className="w-[90%] lg:w-[75%] p-3 mt-2 text-md lg:text-sm border-b-4 bg-[#FFFFFF] rounded-xl text-center font-semibold text-[#3A71FD]"
+              placeholder="Email Address"
+              className="w-[90%] lg:w-[75%] p-3 mt-2 text-sm border-b-4 bg-[#FFFFFF] rounded-xl text-center font-semibold text-[#3A71FD]"
             />
             <textarea
-              placeholder="WRITE MESSAGE HERE"
+              placeholder="Message"
               required
               rows="4"
               cols="50"
-              className="w-[90%] h-[30%] lg:w-[75%] p-3 bg-[#FFFFFF] rounded-md lg:text-sm text-[#3A71FD] font-semibold"
+              className="w-[90%] h-[30%] lg:w-[75%] p-3 bg-[#FFFFFF] rounded-md text-sm text-[#3A71FD] font-semibold"
             ></textarea>
           </form>
         </div>
@@ -57,7 +66,7 @@ const Contact = () => {
           onClick={handleSendClick}
           className="h-20 bg-[#3A71FD] w-[84%] text-white font-semibold text-md rounded-b-xl hover:bg-[#2b335f] duration-200"
         >
-          SEND
+          {sendBtn}
         </button>
       </div>
     </div>

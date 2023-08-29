@@ -11,6 +11,8 @@ import nft10 from "../src/assets/nft10.jpg";
 import nft11 from "../src/assets/nft11.jpg";
 import nft12 from "../src/assets/nft12.jpg";
 
+// This document contains NFT objects I am using as a temporary database.
+
 export const NFTS = [
   {
     id: 1,

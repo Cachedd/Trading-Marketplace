@@ -1,9 +1,12 @@
+/* The following 3 lines is required when initiating Tailwind CSS into a website */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Importing google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Open+Sans&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Urbanist:wght@200;300;400;500;600;700;800;900&display=swap");
 
+/* General styling for the html and body of the website */
 html {
   scroll-behavior: smooth;
   display: flex;
@@ -18,7 +21,17 @@ body {
   background: rgb(241, 241, 241);
   background: linear-gradient(
     0deg,
-    rgb(242, 242, 242) 20%,
+    rgb(234, 234, 234) 70%,
     rgb(255, 255, 255) 100%
   );
+}
+
+/* A fade in, fade out animation for the send button in the contact form */
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s;
+}
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s;
 }

@@ -1,0 +1,27 @@
+Throughout this application, the following have been used:
+
+Tools and Libraries
+- React.js: https://react.dev/
+- React Icons: https://react-icons.github.io/react-icons/ 
+- Ethers.js: https://docs.ethers.org/v5/getting-started/
+- Tailwind CSS: https://tailwindcss.com/
+- React Typed: https://www.npmjs.com/package/react-typed
+- React Scroll: https://www.npmjs.com/package/react-scroll
+
+
+
+
+Inspiration and Tutorials
+- https://www.youtube.com/watch?v=ZU-drSVodBw&list=PPSV
+- https://www.youtube.com/watch?v=Wn_Kb3MR_cU&list=PPSV
+- 
+
+
+
+
+
+
+
+Images:
+- 
+- 

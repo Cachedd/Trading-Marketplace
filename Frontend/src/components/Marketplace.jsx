@@ -1,16 +1,20 @@
 import React, { useState } from "react";
+// Importing the NFT objects from products.js
 import { NFTS } from "../products";
 import Nft from "./Nft";
+// Search icon
 import { PiMagnifyingGlassBold } from "react-icons/pi";
 
 const Marketplace = () => {
   const [sortedNFTs, setSortedNFTs] = useState(NFTS);
   const [searchTerm, setSearchTerm] = useState("");
 
+  // Function for searching NFTs.
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
+  // Function for sorting A - Z
   const sortAZ = () => {
     const sorted = [...sortedNFTs].sort((a, b) =>
       a.title.localeCompare(b.title)
@@ -18,6 +22,7 @@ const Marketplace = () => {
     setSortedNFTs(sorted);
   };
 
+  // Function for sorting Z - A
   const sortZA = () => {
     const sorted = [...sortedNFTs].sort((a, b) =>
       b.title.localeCompare(a.title)
@@ -25,11 +30,13 @@ const Marketplace = () => {
     setSortedNFTs(sorted);
   };
 
+  // Function for sorting Cheap to Expensive
   const sortPriceCheap = () => {
     const sorted = [...sortedNFTs].sort((a, b) => a.price - b.price);
     setSortedNFTs(sorted);
   };
 
+  // Function for sorting Expensive to Cheap
   const sortPriceExpensive = () => {
     const sorted = [...sortedNFTs].sort((a, b) => b.price - a.price);
     setSortedNFTs(sorted);
@@ -46,6 +53,7 @@ const Marketplace = () => {
         className="w-fit h-fit flex justify-center items-center relative"
       >
         <PiMagnifyingGlassBold className="text-md text-[#a5a5a5] absolute left-0 ml-4" />
+        {/* Each time the input is updated the value of searchTerm will update */}
         <input
           type="text"
           placeholder="Search"
@@ -84,10 +92,12 @@ const Marketplace = () => {
         </ul>
       </div>
       <div className="products grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 justify-center items-center gap-10">
+        {/* The sortedNFTs array is filtered to show the appropriate NFT products */}
         {sortedNFTs
           .filter((product) =>
             product.title.toLowerCase().includes(searchTerm.toLowerCase())
           )
+          // Renders the appropriate products
           .map((product) => (
             <Nft data={product} />
           ))}
