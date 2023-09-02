@@ -1,3 +1,4 @@
+// For all references please see references.txt file in repository
 import React, { useState } from "react";
 // Icons imported for the nav menu on mobile devices
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
@@ -78,6 +79,7 @@ const Navbar = () => {
         <h1 className="w-full font-bold text-black m-4">NFTplace.</h1>
         <ul className="uppercase p-4">
           <li className="p-4 border-b-2 border-[#3A71FD] md:text-[1.1rem] text-blue-900 font-semibold">
+            {/* Calls handleNav function to close the navbar when a link is clicked */}
             <Link
               to="home"
               onClick={handleNav}

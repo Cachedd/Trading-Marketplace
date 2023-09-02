@@ -1,3 +1,4 @@
+// For all references please see references.txt file in repository
 import React from "react";
 import "./index.css";
 import Navbar from "./components/Navbar";
@@ -7,6 +8,7 @@ import Contact from "./components/Contact";
 import Marketplace from "./components/Marketplace";
 import ShopContextProvider from "./context/shop-context";
 import Cart from "./components/Cart";
+import AboutUs from "./components/AboutUs";
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
         <Landing />
         <Marketplace />
         <Cart />
+        <AboutUs />
         <Contact />
         <Footer />
       </ShopContextProvider>

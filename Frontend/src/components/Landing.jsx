@@ -1,10 +1,17 @@
+// For all references please see references.txt file in repository
 import React from "react";
 import Typed from "react-typed";
+// https://www.npmjs.com/package/react-typed
 import { Link } from "react-scroll";
+// https://www.npmjs.com/package/react-scroll
 import Blockchain from "../assets/blockchain.png";
+// https://www.citypng.com/photo/10899/hd-isometric-blockchain-png
 import "../index.css";
 import Eth from "../assets/eth-logo.png";
+// https://www.pngwing.com/en/free-png-addfh
 import Btc from "../assets/btc-logo.png";
+// https://logos-world.net/imageup/Bitcoin/Bitcoin-Logo-PNG6.png
+
 import Chainlink from "../assets/link-logo.png";
 
 const Hero = () => {
@@ -12,7 +19,7 @@ const Hero = () => {
     <div className="">
       <div className="w-full min-h-[93vh] text-center justify-center items-center md:flex-col lg:flex lg:flex-row overflow-x-hidden">
         <div className="relative flex justify-center lg:mb-16 items-center py-[5%]">
-          {/* The landing page images. Each token is to animate ontop of the blockchain infrastructure image */}
+          {/* The landing page images. Each token is to animate on-top of the blockchain infrastructure image. Each image has been referenced in the references.txt file in repository.*/}
           <img
             src={Blockchain}
             alt="logo"
@@ -46,7 +53,7 @@ const Hero = () => {
             <p className="text-xl md:text-2xl font-semibold py-4 text-black">
               The place to
             </p>
-            {/* A react-typed feature to showcase some modern UX design */}
+            {/* A react-typed animation to showcase some visual creativity */}
             <Typed
               className="text-xl md:text-2xl font-semibold pl-2 text-[#3A71FD]"
               strings={["buy.", "mint.", "sell."]}
@@ -60,6 +67,7 @@ const Hero = () => {
           </p>
           <div className="flex flex-col justify-center items-center lg:flex-row">
             <button className="bg-[#3A71FD] text-white w-[180px] text-lg lg:w-[180px] rounded-md font-medium my-6 mx-[2%] py-4 hover:bg-slate-600 duration-150">
+              {/* Using react-scroll for smoothscroll. */}
               <Link
                 to="marketplace"
                 spy={true}

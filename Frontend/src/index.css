@@ -26,6 +26,11 @@ body {
   );
 }
 
+/* Hide elements */
+.hidden {
+  display: none;
+}
+
 /* A fade in, fade out animation for the send button in the contact form */
 .fade-in {
   opacity: 1;
@@ -34,4 +39,25 @@ body {
 .fade-out {
   opacity: 0;
   transition: opacity 1s;
+}
+
+/* Initial state of the divs */
+.slide-in-left {
+  transform: translateX(-100%);
+  transition: transform 1s;
+  opacity: 0;
+}
+
+.slide-in-right {
+  transform: translateX(100%);
+  transition: transform 3s;
+  opacity: 0;
+}
+
+/* Final state of the divs after animation */
+.slide-in-left.active,
+.slide-in-right.active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: opacity 1s, transform 1s;
 }

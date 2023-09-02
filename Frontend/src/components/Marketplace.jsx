@@ -1,3 +1,4 @@
+// For all references please see references.txt file in repository
 import React, { useState } from "react";
 // Importing the NFT objects from products.js
 import { NFTS } from "../products";
@@ -48,12 +49,14 @@ const Marketplace = () => {
       className="h-fit w-full flex flex-col justify-center items-center bg-white gap-10 shadow-xl pb-10 rounded-xl p-10"
     >
       <h1 className="text-3xl uppercase font-semibold pt-5">Browse NFTs</h1>
+      {/* Search bar, onSubmit is set to prevent the page from refreshing. */}
       <form
         action="get"
         className="w-fit h-fit flex justify-center items-center relative"
+        onSubmit={(e) => e.preventDefault()}
       >
         <PiMagnifyingGlassBold className="text-md text-[#a5a5a5] absolute left-0 ml-4" />
-        {/* Each time the input is updated the value of searchTerm will update */}
+        {/* The searchTerm is set to the value of the input */}
         <input
           type="text"
           placeholder="Search"
@@ -63,29 +66,30 @@ const Marketplace = () => {
           maxLength={20}
         />
       </form>
+      {/* The sort buttons */}
       <div className="w-fit">
         <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3 pb-5 md:flex-row justify-center items-center">
           <li
             onClick={sortAZ}
-            className="w-[200px] text-sm mx-5 p-3 bg-[#ebebeb] font-semibold cursor-pointer text-[#3A71FD] rounded-lg text-center"
+            className="w-[200px] text-sm mx-5 p-3 bg-[#ebebeb] font-semibold cursor-pointer text-[#3A71FD] rounded-lg text-center hover:bg-[#3A71FD] hover:text-white duration-150"
           >
             Sort A-Z
           </li>
           <li
             onClick={sortZA}
-            className="w-[200px] text-sm mx-5 p-3 bg-[#ebebeb] font-semibold text-[#3A71FD] cursor-pointer rounded-lg text-center"
+            className="w-[200px] text-sm mx-5 p-3 bg-[#ebebeb] font-semibold text-[#3A71FD] cursor-pointer rounded-lg text-center hover:bg-[#3A71FD] hover:text-white duration-150"
           >
             Sort Z-A
           </li>
           <li
             onClick={sortPriceCheap}
-            className="w-[200px] text-sm mx-5 p-3 bg-[#ebebeb] font-semibold cursor-pointer text-[#3A71FD] rounded-lg text-center"
+            className="w-[200px] text-sm mx-5 p-3 bg-[#ebebeb] font-semibold cursor-pointer text-[#3A71FD] rounded-lg text-center hover:bg-[#3A71FD] hover:text-white duration-150"
           >
             Sort Price (Low to High)
           </li>
           <li
             onClick={sortPriceExpensive}
-            className="w-[200px] text-sm mx-5 p-3 bg-[#ebebeb] font-semibold cursor-pointer text-[#3A71FD] rounded-lg text-center"
+            className="w-[200px] text-sm mx-5 p-3 bg-[#ebebeb] font-semibold cursor-pointer text-[#3A71FD] rounded-lg text-center hover:bg-[#3A71FD] hover:text-white duration-150"
           >
             Sort Price (High to Low)
           </li>

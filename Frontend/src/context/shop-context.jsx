@@ -1,3 +1,4 @@
+// For all references please see references.txt file in repository
 import React, { useState } from "react";
 import { NFTS } from "../products";
 
