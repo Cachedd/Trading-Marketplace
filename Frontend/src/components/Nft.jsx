@@ -1,4 +1,4 @@
-// For all references please see references.txt file in repository
+// For all references please see references.txt file in repository (Frontend folder)
 import React from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import { ShopContext } from "../context/shop-context";
