@@ -1,4 +1,4 @@
-// For all references please see references.txt file in repository
+// For all references please see references.txt file in repository (Frontend folder)
 import nft1 from "../src/assets/nft1.jpg";
 // https://unsplash.com/photos/dWHMEcdZF4U
 import nft2 from "../src/assets/nft2.jpg";

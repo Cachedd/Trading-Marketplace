@@ -1,4 +1,4 @@
-// For all references please see references.txt file in repository
+// For all references please see references.txt file in repository (Frontend folder)
 import React, { useState, useRef } from "react";
 import { CircularProgress } from "@material-ui/core";
 import { BsFillCheckCircleFill } from "react-icons/bs";

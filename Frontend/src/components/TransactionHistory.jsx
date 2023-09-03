@@ -1,4 +1,4 @@
-// For all references please see references.txt file in repository
+// For all references please see references.txt file in repository (Frontend folder)
 import React from "react";
 import Transactions from "./Transactions";
 import { AiOutlineClose } from "react-icons/ai";

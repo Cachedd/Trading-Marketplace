@@ -1,4 +1,4 @@
-// For all references please see references.txt file in repository
+// For all references please see references.txt file in repository (Frontend folder)
 import React, { useEffect, useState, useContext } from "react";
 import { ShopContext } from "../context/shop-context";
 import { NFTS } from "../products";

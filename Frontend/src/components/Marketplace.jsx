@@ -1,4 +1,4 @@
-// For all references please see references.txt file in repository
+// For all references please see references.txt file in repository (Frontend folder)
 import React, { useState } from "react";
 // Importing the NFT objects from products.js
 import { NFTS } from "../products";

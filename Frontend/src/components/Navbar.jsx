@@ -1,4 +1,4 @@
-// For all references please see references.txt file in repository
+// For all references please see references.txt file in repository (Frontend folder)
 import React, { useState } from "react";
 // Icons imported for the nav menu on mobile devices
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";

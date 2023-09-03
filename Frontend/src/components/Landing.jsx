@@ -1,4 +1,4 @@
-// For all references please see references.txt file in repository
+// For all references please see references.txt file in repository (Frontend folder)
 import React from "react";
 import Typed from "react-typed";
 // https://www.npmjs.com/package/react-typed
