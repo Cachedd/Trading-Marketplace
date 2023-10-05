@@ -11,13 +11,18 @@ const pool = mysql.createPool({
     database: process.env.MYSQL_DATABASE
 }).promise()
 
+// Query database for getting all columns 
 export async function getNftTables() {
-    // Destructing assignment to get the first item out of the array
-    const [rows] = await pool.query("SELECT * FROM nft_table")
-    return rows
+   try {
+     // Destructing assignment to get the first item out of the array
+     const [rows] = await pool.query("SELECT * FROM nft_table")
+     return rows
+   } catch (err) {
+    console.log(err)
+   }
 }
 
-
+// Query to get a single nft
 export async function getNft(id) {
     const [rows] = await pool.query(`
     SELECT *
@@ -27,6 +32,7 @@ export async function getNft(id) {
     return rows[0]
 }
 
+// Query to get the contact message with given id
 export async function getContact(id) {
     const [rows] = await pool.query(`
     SELECT *
@@ -36,17 +42,28 @@ export async function getContact(id) {
     return rows[0]
 }
 
-export async function createNft(first_name, last_name, message) {
+// Query to insert data recieved from frontend to db
+export async function createMessage(first_name, last_name, email, message) {
     const [result] = await pool.query(`
-    INSERT INTO contact_form (first_name, last_name, message)
-    VALUES (?, ?, ?)
-    `, [first_name, last_name, message])
+    INSERT INTO contact_form (first_name, last_name, email, message)
+    VALUES (?, ?, ?, ?)
+    `, [first_name, last_name, email, message], 
+    (err, result) => {
+        if (err) {
+            console.log(err)
+        }
+        else {
+            res.send("Values Inserted")
+        }
+    })
+    
     const id = result.insertId
     return getContact(id)
 }
 
-const result = await createNft('test', 'test', 'test')
-console.log(result)
+
+// const result = await createMessage('test', 'test', 'test@gmail.com', 'test')
+// console.log(result)
 
 // const nft = await getNft(2)
 // console.log(nft)
