@@ -113,7 +113,6 @@ const nfts = async () => {
   }
 };
 
-
 export const NFTS = await nfts()
 // console.log("This is outside nfts")
 console.log([NFTS])
