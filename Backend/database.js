@@ -22,24 +22,44 @@ export async function getNftTables() {
    }
 }
 
-// Query to get a single nft
-export async function getNft(id) {
+// Query to sort NFTs from A-Z
+export async function sortAZ() {
     const [rows] = await pool.query(`
-    SELECT *
+    SELECT * 
     FROM nft_table
-    WHERE nft_id = ?
-    `, [id])
-    return rows[0]
+    ORDER BY title ASC;     
+    `)
+    return rows
 }
 
-// Query to get the contact message with given id
-export async function getContact(id) {
+// Query to sort NFTs from Z-A
+export async function sortZA() {
     const [rows] = await pool.query(`
-    SELECT *
-    FROM contact_form
-    WHERE form_id = ?
-    `, [id])
-    return rows[0]
+    SELECT * 
+    FROM nft_table
+    ORDER BY title DESC;     
+    `)
+    return rows
+}
+
+// Query to sort NFTs from low - high
+export async function sortPriceCheap() {
+    const [rows] = await pool.query(`
+    SELECT * 
+    FROM nft_table
+    ORDER BY price ASC;     
+    `)
+    return rows
+}
+
+// Query to sort NFTs from high - low
+export async function sortPriceExpensive() {
+    const [rows] = await pool.query(`
+    SELECT * 
+    FROM nft_table
+    ORDER BY price DESC;     
+    `)
+    return rows
 }
 
 // Query to insert data recieved from frontend to db
@@ -48,7 +68,7 @@ export async function createMessage(first_name, last_name, email, message) {
     INSERT INTO contact_form (first_name, last_name, email, message)
     VALUES (?, ?, ?, ?)
     `, [first_name, last_name, email, message], 
-    (err, result) => {
+    (err) => {
         if (err) {
             console.log(err)
         }
@@ -56,9 +76,19 @@ export async function createMessage(first_name, last_name, email, message) {
             res.send("Values Inserted")
         }
     })
-    
-    const id = result.insertId
-    return getContact(id)
+}
+
+export async function searchData(title) {
+    try {
+        const [result] = await pool.query(`
+        SELECT * FROM nft_table WHERE title LIKE ?
+        `, "%" + title + "%")
+        return result
+    }
+    catch (err) {
+        console.log(err)
+        return null
+    }
 }
 
 
