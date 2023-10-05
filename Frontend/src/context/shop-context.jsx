@@ -34,7 +34,7 @@ export const ShopContextProvider = (props) => {
 
   // Wraps these funcitons into an object so that they can seemlessly be used throughout the application
   const contextValue = { cartItems, addToCart, removeFromCart, deleteFromCart };
-  console.log(cartItems);
+  // console.log(cartItems);
   return (
     <ShopContext.Provider value={contextValue}>
       {props.children}

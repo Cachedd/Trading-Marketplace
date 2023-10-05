@@ -103,7 +103,7 @@ const Cart = () => {
               {/* This maps the cart items to the cart */}
               {NFTS.map((product) => {
                 if (cartItems[product.id] !== 0) {
-                  return <CartItems data={product} />;
+                  return <CartItems key={product.id} data={product} />;
                 }
               })}
             </div>

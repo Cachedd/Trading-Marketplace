@@ -1,5 +1,6 @@
 // For all references please see references.txt file in repository (Frontend folder)
 import React, { useState } from "react";
+
 // Importing the NFT objects from products.js
 import { NFTS } from "../products";
 import Nft from "./Nft";
@@ -103,7 +104,7 @@ const Marketplace = () => {
           )
           // Renders the appropriate products
           .map((product) => (
-            <Nft data={product} />
+            <Nft key={product.id} data={product} />
           ))}
       </div>
     </div>
