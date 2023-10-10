@@ -2,6 +2,7 @@
 import React from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import { ShopContext } from "../context/shop-context";
+import { NFTS } from "../products";
 
 export const Nft = (props) => {
   // Destructuring the data from the NFTS array in products.jsx
@@ -13,10 +14,10 @@ export const Nft = (props) => {
   return (
     <div
       onClick={() => addToCart(id)}
-      className="flex flex-col justify-between items-center h-[310px] w-[250px] rounded-xl text-white bg-[#3A71FD] overflow-hidden shadow-lg hover:bg-[#223052] hover:scale-105 cursor-pointer duration-200"
+      className="flex flex-col justify-between items-center h-[310px] w-[250px] relative rounded-xl text-white bg-[#3A71FD] overflow-hidden shadow-lg hover:bg-[#223052] hover:scale-105 cursor-pointer duration-200"
     >
-      <img src={image} alt="" />
-      <div className="w-full h-full flex justify-between items-center">
+      <img src={image} alt="" className="w-80 h-80 object-cover" />
+      <div className="w-full h-[20%] flex justify-between items-center bg-[#3A71FD] absolute bottom-0">
         <p className="text-center text-sm font-semibold w-[33%]">{title}</p>
         <p className="text-center text-sm font-semibold w-[33%]">{price} ETH</p>
 

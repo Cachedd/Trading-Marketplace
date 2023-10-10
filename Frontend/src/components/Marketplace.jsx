@@ -19,8 +19,8 @@ const Marketplace = () => {
 
   // Function for searching NFTs.
   const search = async () => {
-    const search = await api.post("/search", {'title' : searchTerm});
-    setSortedNFTs(search.data)
+    const search = await api.post("/search", { title: searchTerm });
+    setSortedNFTs(search.data);
   };
 
   // Function for sorting A - Z
@@ -57,9 +57,15 @@ const Marketplace = () => {
       <form
         action="get"
         className="w-fit h-fit flex justify-center items-center relative"
-        onSubmit={(e) => e.preventDefault()}
+        onSubmit={(e) => {
+          e.preventDefault();
+          search();
+        }}
       >
-        <PiMagnifyingGlassBold className="text-md text-[#a5a5a5] absolute left-0 ml-4" onClick={search}/>
+        <PiMagnifyingGlassBold
+          className="text-md text-[#a5a5a5] absolute left-0 ml-4"
+          onClick={search}
+        />
         {/* The searchTerm is set to the value of the input */}
         <input
           type="text"
@@ -67,6 +73,11 @@ const Marketplace = () => {
           className="w-[280px] lg:w-[460px] bg-[#f2f2f2] text-sm rounded-lg shadow-lg font-semibold text-center p-3"
           value={searchTerm}
           onChange={handleSearchChange}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              search();
+            }
+          }}
           maxLength={20}
         />
       </form>

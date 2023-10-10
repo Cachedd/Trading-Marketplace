@@ -1,6 +1,6 @@
 // For all references please see references.txt file in repository (Frontend folder)
 import React, { useState, useRef } from "react";
-import api from '../api/posts';
+import api from "../api/posts";
 import { CircularProgress } from "@material-ui/core";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 
@@ -12,14 +12,17 @@ const Contact = () => {
 
   // Makes a POST request to the /contact enpoint to add the contact form info to database
   const addMessage = () => {
-    api.post("/contact", {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      message: message,
-    }).then(() => {
-      console.log("success");
-    }).catch(err => console.log(err));
+    api
+      .post("/contact", {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        message: message,
+      })
+      .then(() => {
+        console.log("success");
+      })
+      .catch((err) => console.log(err));
   };
 
   const formRef = useRef(null);
@@ -97,12 +100,16 @@ const Contact = () => {
 
   // This function will be used to check if all the fields are filled out correctly. If they are, the form will submit. If not, the form will not submit.
   const contactSendButton = () => {
-    checkFirstName();
-    checkLastName();
-    checkEmail();
-    checkMessage();
-    handleSendClick();
-    addMessage();
+    if (
+      showTick === true &&
+      showTickLastName === true &&
+      showTickEmail === true &&
+      messageRef.current.value !== "" &&
+      messageRef.current.value !== null
+    ) {
+      handleSendClick();
+      addMessage();
+    }
   };
 
   return (
@@ -132,7 +139,9 @@ const Contact = () => {
                   ref={firstNameRef}
                   id="firstname"
                   type="text"
-                  onChange={(event) => {setFirstName(event.target.value)}}
+                  onChange={(event) => {
+                    setFirstName(event.target.value);
+                  }}
                   required
                   maxLength={20}
                   placeholder="First Name"
@@ -149,7 +158,9 @@ const Contact = () => {
                   onBlur={checkLastName}
                   type="text"
                   id="lastname"
-                  onChange={(event) => {setLastName(event.target.value)}}
+                  onChange={(event) => {
+                    setLastName(event.target.value);
+                  }}
                   ref={lastNameRef}
                   required
                   maxLength={25}
@@ -168,7 +179,9 @@ const Contact = () => {
                 onBlur={checkEmail}
                 ref={emailRef}
                 id="email"
-                onChange={(event) => {setEmail(event.target.value)}}
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                }}
                 type="email"
                 required
                 maxLength={50}
@@ -181,7 +194,9 @@ const Contact = () => {
               onBlur={checkMessage}
               ref={messageRef}
               id="message"
-              onChange={(event) => {setMessage(event.target.value)}}
+              onChange={(event) => {
+                setMessage(event.target.value);
+              }}
               placeholder="Message"
               required
               rows="4"
