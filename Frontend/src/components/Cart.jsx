@@ -48,6 +48,7 @@ const Cart = () => {
     if (connectBtn === "Connect Wallet") {
       try {
         await window.ethereum.request({ method: "eth_requestAccounts" });
+        console.log("Wallet connected");
       } finally {
         setConnectBtn("Connected");
         setConnectBtnColor("#006400");
@@ -56,7 +57,9 @@ const Cart = () => {
         // Get the user's address and balance
         const userAddress = window.ethereum.selectedAddress;
         setUserAddress(userAddress);
+        console.log("User Address: " + userAddress);
         const provider = new ethers.BrowserProvider(window.ethereum);
+        console.log("Provider connection successful");
         const balanceWei = await provider.getBalance(userAddress);
         const balanceEth = ethers.formatEther(balanceWei);
         setBalance(balanceEth);
@@ -78,8 +81,8 @@ const Cart = () => {
 
   // Function to handle the transaction history modal
   const [transactionDetails, setTransactionDetails] = useState({
-    time: "Time",
-    hash: "Hash",
+    time: "",
+    hash: "",
   });
 
   // Function to handle the purchase of NFTs
@@ -89,6 +92,7 @@ const Cart = () => {
       try {
         // Get the user's signer information
         const provider = new ethers.BrowserProvider(window.ethereum);
+        console.log("Provider connection successful");
         const signer = await provider.getSigner();
         console.log("Signer: " + signer.address);
 
@@ -97,7 +101,6 @@ const Cart = () => {
         console.log("buyNFT function called");
         console.log(totalETH);
         const totalETHInWei = totalETH.toString();
-        console.log(totalETHInWei);
 
         // Call the buyNFT function
         const tx = await contractWithSigner.buyNFT({

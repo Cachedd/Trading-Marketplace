@@ -12,7 +12,11 @@ const TransactionHistory = ({ transactionDetails }) => {
           Transaction History
         </h1>
         <AiOutlineClose className="absolute top-5 right-5 text-black text-2xl cursor-pointer" />
-
+        <div className="flex justify-center w-full text-center">
+          <h1 className="w-[33%] font-bold">Time</h1>
+          <h1 className="w-[33%] font-bold">Hash</h1>
+          <h1 className="w-[33%] font-bold">EtherScan</h1>
+        </div>
         <ul className="flex justify-start items-center flex-col h-full w-full">
           <Transactions transactionDetails={transactionDetails} />
         </ul>

@@ -8,14 +8,14 @@ const Transactions = ({ transactionDetails }) => {
     "https://sepolia.etherscan.io/tx/" + transactionDetails.hash;
 
   return (
-    <div className="h-16 flex justify-center items-center w-full px-5 gap-5 lg:gap-24 font-semibold text-sm border-b-2 border-gray-500">
-      <h1 className="w-[15%] text-center">{transactionDetails.time}</h1>
-      <h1 className="w-fit text-center overflow-scroll lg:w-full lg:overflow-auto">
+    <div className="h-16 flex justify-evenly items-center w-full px-5 gap-5 font-semibold text-sm border-b-2 border-gray-500">
+      <h1 className="w-[33%] text-center">{transactionDetails.time}</h1>
+      <h1 className="text-center w-[33%] overflow-scroll lg:overflow-auto">
         {transactionDetails.hash}
       </h1>
       <a
         href={etherScanLink}
-        className="w-[15%] text-center"
+        className="w-[33%] text-center"
         target="_blank"
         rel="noopener noreferrer"
       >
