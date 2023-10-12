@@ -66,7 +66,7 @@ const Cart = () => {
 
         // Create a contract instance
         // Contract Address (** IT CHANGES EVERYTIME YOU DEPLOY... GO TO REMIX.IDE **)
-        const contractAddress = "0xaCAE0d9Ba375Ab8f1827600375007E92Bd437a88";
+        const contractAddress = "0xcdC013a89D44d060EeF876c00D9FC7B9fD98ffe6";
 
         // Create a new ethers.js provider connected to the user's wallet
         const contractInstance = new ethers.Contract(
@@ -127,7 +127,7 @@ const Cart = () => {
       } catch (error) {
         // Transaction failed
         console.error("Error buying NFT:", error);
-        alert("Error: You do not have enough ETH in your wallet.", error);
+        alert("Error: Transaction unsuccessful.", error);
       }
     }
 
