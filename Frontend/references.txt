@@ -1,0 +1,59 @@
+Throughout this application, the following tools and resources have been used:
+
+Tools and Libraries
+- React.js: https://react.dev/
+- React Icons: https://react-icons.github.io/react-icons/ 
+- Ethers.js: https://docs.ethers.org/v5/getting-started/
+- Tailwind CSS: https://tailwindcss.com/
+- React Typed: https://www.npmjs.com/package/react-typed
+- React Scroll: https://www.npmjs.com/package/react-scroll
+- MaterialUI: https://mui.com/material-ui/
+
+
+Inspiration and Tutorials
+- https://www.youtube.com/watch?v=ZU-drSVodBw&list=PPSV
+- https://www.youtube.com/watch?v=Wn_Kb3MR_cU&list=PPSV
+- https://www.youtube.com/watch?v=tEMrD9t85v4&t=1434s
+
+
+NFT Images
+- MOON: https://unsplash.com/photos/dWHMEcdZF4U (Accessed 11/08/23)
+- TWIST: https://unsplash.com/photos/WyUmTnaKnRs (Accessed 11/08/23)
+- SPHERE: https://unsplash.com/photos/tJSLtgcuoxI (Accessed 11/08/23)
+- CUBE: https://unsplash.com/photos/oWFZm4NAvMQ (Accessed 11/08/23)
+- TUNNEL: https://unsplash.com/photos/561gdO-k6-g (Accessed 11/08/23)
+- SUB: https://unsplash.com/photos/XwJ_QoxFyhc (Accessed 11/08/23)
+- SPACE: https://unsplash.com/photos/u5vq1ZT1OAI (Accessed 11/08/23)
+- BMW: https://unsplash.com/photos/PiqZfESKt3k (Accessed 08/08/23)
+- SHEESH: https://unsplash.com/photos/oww5fgE_7pk (Accessed 08/08/23)
+- GALAXY: https://unsplash.com/photos/PiqZfESKt3k (Accessed 08/08/23)
+- BRIGHT: https://unsplash.com/photos/Zr8w9mNN18A (Accessed 08/08/23)
+- BEACH: https://unsplash.com/photos/a-group-of-people-standing-on-top-of-a-sandy-beach-cFtnsJ74Z-8 (Accessed 08/08/23)
+
+
+Images
+- Eth Logo1: https://www.pngwing.com/en/free-png-azead (Accessed 09/08/23)
+- Eth Logo2: https://www.pngwing.com/en/free-png-addfh (Accessed 10/08/23)
+- Blockchain Image: https://www.citypng.com/photo/10899/hd-isometric-blockchain-png (Accessed 10/08/23)
+- Btc Logo: https://logos-world.net/imageup/Bitcoin/Bitcoin-Logo-PNG6.png (Accessed 09/08/23)
+- Link Logo: https://www.pngall.com/chainlink-crypto-png/download/85152 (Accessed 10/08/23)
+- Solidity Logo: https://www.pngwing.com/en/free-png-pvygv/download (Accessed 10/08/23)
+
+
+Fonts
+- Google Fonts (Inter): https://fonts.google.com/specimen/Inter?query=inter
+- Google Fonts (Poppins): https://fonts.google.com/specimen/Poppins?query=poppins
+- Google Fonts (Urbanist): https://fonts.google.com/specimen/Urbanist?query=urbanist
+
+
+Quotes
+- Investopedia: https://www.investopedia.com/non-fungible-tokens-nft-5115211 (Accessed 12/08/23, Non-Fungible Token (NFT): What It Means and How It Works, Rakesh Sharma)
+
+
+System Architecture Design (created in Figma)
+- MetaMask Logo: https://commons.wikimedia.org/wiki/File:MetaMask_Fox.svg# (Accessed 15/08/23)
+- Ethereum Logo: https://www.pngall.com/wp-content/uploads/10/Ethereum-Logo-PNG-HD-Image.png (Accessed 15/08/23)
+- Solidity Logo: https://commons.wikimedia.org/wiki/File:Solidity_logo.svg (Accessed 15/08/23)
+- SQL Logo: https://www.pngwing.com/en/free-png-zoupl/download (Accessed 15/08/23)
+- React Logo: https://www.cleanpng.com/png-react-javascript-angularjs-ionic-atom-2904925/download-png.html (Accessed 15/08/23)
+- Node Logo: https://www.pngwing.com/en/free-png-nmhof (Accessed 15/08/23)

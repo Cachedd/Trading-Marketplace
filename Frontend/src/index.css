@@ -1,0 +1,63 @@
+/* The following 3 lines is required when initiating Tailwind CSS into a website */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importing google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Open+Sans&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Urbanist:wght@200;300;400;500;600;700;800;900&display=swap");
+
+/* General styling for the html and body of the website */
+html {
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  max-width: 1400px;
+  font-family: "Inter", sans-serif;
+  background: rgb(241, 241, 241);
+  background: linear-gradient(
+    0deg,
+    rgb(234, 234, 234) 70%,
+    rgb(255, 255, 255) 100%
+  );
+}
+
+/* Hide elements */
+.hidden {
+  display: none;
+}
+
+/* A fade in, fade out animation for the send button in the contact form */
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s;
+}
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+/* Initial state of the divs */
+.slide-in-left {
+  transform: translateX(-100%);
+  transition: transform 1s;
+  opacity: 0;
+}
+
+.slide-in-right {
+  transform: translateX(100%);
+  transition: transform 3s;
+  opacity: 0;
+}
+
+/* Final state of the divs after animation */
+.slide-in-left.active,
+.slide-in-right.active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: opacity 1s, transform 1s;
+}
