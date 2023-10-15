@@ -143,7 +143,7 @@ const Cart = () => {
         const balanceEth = ethers.formatEther(balanceWei);
         setBalance(balanceEth);
 
-        // Send to owner_table in database
+        // Send to order_table in database
         const transactionData = {
           purchasedNftIds: concatenatedIds,
           signerAddress: signerAddress,

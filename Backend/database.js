@@ -105,6 +105,8 @@ export async function sendTransactionData(
     }
   );
 }
+
+// Query to search the items requested from the frontend 
 export async function searchData(title) {
   try {
     const [result] = await pool.query(
@@ -122,6 +124,3 @@ export async function searchData(title) {
 
 // const result = await createMessage('test', 'test', 'test@gmail.com', 'test')
 // console.log(result)
-
-// const nft = await getNft(2)
-// console.log(nft)
