@@ -11,6 +11,8 @@ import TransactionHistory from "./TransactionHistory";
 
 import { ethers, hashMessage } from "ethers";
 import smartContractABI from "./smartContractABI.json";
+import axios from "axios";
+import api from "../api/posts";
 
 const Cart = () => {
   // Function to inherit the data, objects and functions from the shop-context.jsx
@@ -49,6 +51,9 @@ const Cart = () => {
       try {
         await window.ethereum.request({ method: "eth_requestAccounts" });
         console.log("Wallet connected");
+      } catch {
+        alert("Error: Metamask not installed. Please refresh the page.");
+        console.log("Error: Metamask not installed. Please refresh the page.");
       } finally {
         setConnectBtn("Connected");
         setConnectBtnColor("#006400");
@@ -102,6 +107,17 @@ const Cart = () => {
         console.log(totalETH);
         const totalETHInWei = totalETH.toString();
 
+        // Find NFTs in cart
+        let purchasedNftIds = [];
+        let signerAddress = signer.address;
+        NFTS.forEach((nft) => {
+          if (cartItems[nft.id] !== 0) {
+            purchasedNftIds.push(nft.id);
+          }
+        });
+
+        let concatenatedIds = purchasedNftIds.join(", ");
+
         // Call the buyNFT function
         const tx = await contractWithSigner.buyNFT({
           // Convert the ETH value to wei
@@ -114,16 +130,45 @@ const Cart = () => {
         // Transaction was successful
         setPurchaseBtn("PURCHASE SUCCESSFUL");
 
-        // Update the transaction history modal
-        setTransactionDetails({
-          time: new Date().toLocaleTimeString(),
-          hash: receipt.hash,
-        });
+        // Use setTimeout to wait before updating the state
+        setTimeout(() => {
+          setTransactionDetails({
+            time: new Date().toLocaleTimeString(),
+            hash: receipt.hash,
+          });
+        }, 2500);
 
         // Update the user's balance
         const balanceWei = await provider.getBalance(currentAddress);
         const balanceEth = ethers.formatEther(balanceWei);
         setBalance(balanceEth);
+
+        // Send to owner_table in database
+        const transactionData = {
+          purchasedNftIds: concatenatedIds,
+          signerAddress: signerAddress,
+          totalETH: totalETH,
+          time: transactionDetails.time,
+          hash: transactionDetails.hash,
+        };
+
+        console.log(transactionData);
+
+        const addTransaction = () => {
+          api
+            .post("/transaction", {
+              purchasedNftIds: concatenatedIds,
+              signerAddress: signerAddress,
+              totalETH: totalETH,
+              time: new Date().toLocaleTimeString(),
+              hash: receipt.hash,
+            })
+            .then(() => {
+              console.log("success");
+            })
+            .catch((err) => console.log(err));
+        };
+        addTransaction();
       } catch (error) {
         // Transaction failed
         console.error("Error buying NFT:", error);
